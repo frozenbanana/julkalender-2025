@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Inter:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --christmas-red: #c41e3a;
+    --christmas-green: #165b33;
+    --christmas-gold: #ffd700;
+    --snow-white: #ffffff;
+    --dark-bg: #0a1612;
+    --card-bg: #1a2f26;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0a1612 0%, #1a2f26 100%);
+    color: var(--snow-white);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Snowfall Animation */
+.snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10%;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.5rem;
+    animation: fall linear infinite;
+}
+
+.snowflake:nth-child(1) {
+    left: 10%;
+    animation-duration: 10s;
+    animation-delay: 0s;
+}
+
+.snowflake:nth-child(2) {
+    left: 30%;
+    animation-duration: 12s;
+    animation-delay: 2s;
+}
+
+.snowflake:nth-child(3) {
+    left: 50%;
+    animation-duration: 8s;
+    animation-delay: 4s;
+}
+
+.snowflake:nth-child(4) {
+    left: 70%;
+    animation-duration: 11s;
+    animation-delay: 1s;
+}
+
+.snowflake:nth-child(5) {
+    left: 85%;
+    animation-duration: 9s;
+    animation-delay: 3s;
+}
+
+.snowflake:nth-child(6) {
+    left: 20%;
+    animation-duration: 13s;
+    animation-delay: 5s;
+}
+
+@keyframes fall {
+    0% {
+        top: -10%;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        top: 110%;
+        opacity: 0;
+    }
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 3rem 2rem 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--christmas-gold);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--snow-white);
+    opacity: 0.9;
+}
+
+/* Main Content */
+main {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Calendar Grid */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    .calendar-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .calendar-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+/* Calendar Door */
+.calendar-door {
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, var(--christmas-red) 0%, #8b1428 100%);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.calendar-door::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.calendar-door:hover::before {
+    opacity: 1;
+}
+
+.calendar-door:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(196, 30, 58, 0.4);
+}
+
+.door-number {
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--christmas-gold);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.door-icon {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    z-index: 1;
+}
+
+/* Opening Animation */
+.calendar-door.opening {
+    animation: doorOpen 0.8s ease-out forwards;
+}
+
+@keyframes doorOpen {
+    0% {
+        transform: scale(1) rotateY(0deg);
+    }
+    50% {
+        transform: scale(1.1) rotateY(90deg);
+    }
+    100% {
+        transform: scale(0.8) rotateY(180deg);
+        opacity: 0;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 1.5rem;
+    color: var(--christmas-gold);
+}
