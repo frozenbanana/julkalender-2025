@@ -58,3 +58,13 @@ main {
     color: #666;
     margin: 2rem 0;
 }
+
+.profile-picture {
+    display: block;
+    margin: 0 auto 1.5rem auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 5);
+}
