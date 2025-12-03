@@ -64,9 +64,15 @@ button.addEventListener('mouseenter', () => {
     button.style.transform = `scale(${currentScale})`;
     button.style.transition = 'all 0.3s ease';
     
+<<<<<<< HEAD
+    // Kontrollera om knappen är mindre än 80px bred
+    const buttonWidth = button.offsetWidth * currentScale;
+    if (buttonWidth < 80 && !santaSceneTriggered) {
+=======
     // Kontrollera om knappen är mindre än 100px bred
     const buttonWidth = button.offsetWidth * currentScale;
     if (buttonWidth < 100 && !santaSceneTriggered) {
+>>>>>>> 3933bf31ea2c8b28fe038ca942609696c4ab29c2
         santaSceneTriggered = true;
         triggerSantaScene();
     }
