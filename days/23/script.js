@@ -49,30 +49,8 @@ for (let i = 0; i < 5; i++) {
 
 // Jingle Bells - enkel melodi med Web Audio API
 function playJingleBells() {
-    const ctx = new (window.AudioContext || window.webkitAudioContext)();
-    const notes = [
-        { freq: 392, dur: 0.3 }, // G
-        { freq: 392, dur: 0.3 },
-        { freq: 392, dur: 0.6 },
-        { freq: 392, dur: 0.3 },
-        { freq: 392, dur: 0.3 },
-        { freq: 392, dur: 0.6 },
-        { freq: 392, dur: 0.3 },
-        { freq: 494, dur: 0.3 }, // B
-        { freq: 261, dur: 0.3 }, // C
-        { freq: 329, dur: 0.3 }, // E
-        { freq: 392, dur: 0.6 }
-    ];
-    let t = ctx.currentTime;
-    notes.forEach(note => {
-        const osc = ctx.createOscillator();
-        osc.type = 'triangle';
-        osc.frequency.value = note.freq;
-        osc.connect(ctx.destination);
-        osc.start(t);
-        osc.stop(t + note.dur);
-        t += note.dur + 0.05;
-    });
+    const audio = new Audio('https://upload.wikimedia.org/wikipedia/commons/8/8a/Jingle_Bells_%28Calm%29_%28ISRC_USUAN1100188%29.mp3');
+    audio.play();
 }
 
 // Rita snöbakgrund
