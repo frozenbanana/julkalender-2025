@@ -1,24 +1,103 @@
 <!DOCTYPE html>
 <html lang="sv">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dag 12 - Glimåkra Julkalender</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <h1>🎄 Dag 12 🎄</h1>
-            <a href="../../index.html" class="back-link">← Tillbaka till kalendern</a>
-        </header>
-        
-        <main>
-            <p class="welcome-message">Välkommen! Här kan du skapa något fantastiskt! ✨</p>
-            <!-- Din kreativa kod här -->
-        </main>
+      <header>
+        <h1>🎄 Dag 12 🎄</h1>
+        <a href="../../index.html" class="back-link">← Tillbaka till kalendern</a>
+      </header>
+
+      <main>
+        <p class="welcome-message">Välkommen! Här bjuder jultomten på en dansshow! ✨</p>
+
+        <!-- Dansande jultomte -->
+        <section class="santa-section">
+          <div class="santa-stage">
+            <div class="stage-lights">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="santa-wrapper">
+              <div class="santa" id="dancingSanta">
+                <div class="santa-hat">
+                  <div class="hat-top"></div>
+                  <div class="hat-brim"></div>
+                </div>
+
+                <div class="santa-head">
+                  <div class="santa-face">
+                    <div class="santa-eyes">
+                      <span class="eye left"></span>
+                      <span class="eye right"></span>
+                    </div>
+                    <div class="santa-nose"></div>
+                    <div class="santa-beard">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="santa-body">
+                  <div class="santa-coat">
+                    <div class="coat-buttons">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                  </div>
+                  <div class="santa-belt">
+                    <div class="belt-buckle"></div>
+                  </div>
+                </div>
+
+                <div class="santa-arms">
+                  <div class="arm left">
+                    <div class="mitten"></div>
+                  </div>
+                  <div class="arm right">
+                    <div class="mitten"></div>
+                  </div>
+                </div>
+
+                <div class="santa-legs">
+                  <div class="leg left">
+                    <div class="boot"></div>
+                  </div>
+                  <div class="leg right">
+                    <div class="boot"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="snow-layer">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+
+          <div class="controls">
+            <button class="dance-toggle" id="danceToggle">Starta dansen 💃</button>
+            <p class="hint-text">
+              Klicka på jultomten för att få honom att snurra ett extra varv! 🎅
+            </p>
+          </div>
+        </section>
+      </main>
     </div>
-    
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
