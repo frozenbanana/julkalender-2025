@@ -14,8 +14,67 @@
         </header>
         
         <main>
-            <p class="welcome-message">Välkommen! Här kan du skapa något fantastiskt! ✨</p>
-            <!-- Din kreativa kod här -->
+            <div class="card-maker">
+                <div class="controls">
+                    <h2>🎨 Skapa ditt julkort</h2>
+                    
+                    <div class="control-group">
+                        <label>Välj design:</label>
+                        <div class="design-options">
+                            <button class="design-btn active" data-design="snowflakes">❄️ Snöflingor</button>
+                            <button class="design-btn" data-design="tree">🎄 Gran</button>
+                            <button class="design-btn" data-design="santa">🎅 Tomte</button>
+                            <button class="design-btn" data-design="gifts">🎁 Paket</button>
+                        </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="greeting">Din hälsning:</label>
+                        <input type="text" id="greeting" placeholder="God Jul!" value="God Jul!">
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="message">Ditt meddelande:</label>
+                        <textarea id="message" rows="3" placeholder="Önskar dig en riktigt fin jul...">Önskar dig en riktigt fin jul och ett gott nytt år!</textarea>
+                    </div>
+                    
+                    <div class="control-group">
+                        <label for="sender">Från:</label>
+                        <input type="text" id="sender" placeholder="Ditt namn">
+                    </div>
+                    
+                    <div class="control-group">
+                        <label>Kortfärg:</label>
+                        <div class="color-options">
+                            <button class="color-btn active" data-color="red" style="background: #c41e3a;"></button>
+                            <button class="color-btn" data-color="green" style="background: #165b33;"></button>
+                            <button class="color-btn" data-color="blue" style="background: #0f52ba;"></button>
+                            <button class="color-btn" data-color="gold" style="background: #d4af37;"></button>
+                        </div>
+                    </div>
+                    
+                    <button class="create-btn">✨ Skapa kort</button>
+                </div>
+                
+                <div class="card-preview">
+                    <div class="card" id="christmasCard">
+                        <div class="card-decorations" id="decorations"></div>
+                        <div class="card-content">
+                            <h3 class="card-greeting" id="cardGreeting">God Jul!</h3>
+                            <p class="card-message" id="cardMessage">Önskar dig en riktigt fin jul och ett gott nytt år!</p>
+                            <p class="card-sender" id="cardSender">- Ditt namn</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal" id="successModal">
+                <div class="modal-content">
+                    <h2>🎉 Julkort skapat!</h2>
+                    <p>Ditt julkort är klart! Snyggt jobbat! 🎄</p>
+                    <button class="close-modal">Stäng</button>
+                </div>
+            </div>
         </main>
     </div>
     
